@@ -1,0 +1,7 @@
+.app {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}

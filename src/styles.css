@@ -4,6 +4,7 @@
   --fundo-geral: #1C1D21;
   --fundo-componentes: #2A2C34;
   --cabecalho-componentes: #33353F;
+  --texto: #F5F5F5;
 
   --violeta-destaque: #7693FF;
 
@@ -19,5 +20,5 @@ body {
   font-style: normal;
   min-height: 100vh;
   background: var(--fundo-geral);
-  color: #F5F5F5;
+  color: var(--texto);
 }

@@ -1,3 +1,9 @@
+.apresentacao {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .titulo {
   font-size: 1.9375rem;
   font-style: normal;

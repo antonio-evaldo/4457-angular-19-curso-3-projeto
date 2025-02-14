@@ -1,0 +1,27 @@
+.titulo {
+  border-radius: 1.5rem 1.5rem 0rem 0rem;
+  background: var(--cabecalho-componentes);
+  padding: 1rem 0.5rem;
+  text-align: center;
+
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.valor {
+  border-radius: 0rem 0rem 1.5rem 1.5rem;
+  background: var(--fundo-componentes);
+  padding: 3.8rem 1rem;
+  color: var(--violeta-destaque);
+
+  font-size: 2.4375rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

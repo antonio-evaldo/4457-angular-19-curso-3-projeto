@@ -1,13 +1,19 @@
 .app {
   min-height: 100vh;
+  padding: 0 3.75rem;
 
   display: flex;
   justify-content: center;
   gap: 1.5rem;
 }
 
+.barra-lateral {
+  flex-basis: 17.625rem;
+}
+
 .conteudo-principal {
   padding-top: 5rem;
+  flex-basis: 55.875rem;
 
   display: flex;
   flex-direction: column;

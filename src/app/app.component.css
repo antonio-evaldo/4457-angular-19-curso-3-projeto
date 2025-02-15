@@ -12,10 +12,31 @@
 }
 
 .conteudo-principal {
-  padding-top: 5rem;
+  padding: 5rem 0;
   flex-basis: 55.875rem;
 
   display: flex;
   flex-direction: column;
   row-gap: 2.5rem;
+}
+
+.area-financeira {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-areas:
+    "saldo      saldo"
+    "transacoes contas";
+  grid-template-columns: 1fr 1fr;
+}
+
+.saldo {
+  grid-area: saldo;
+}
+
+.transacoes {
+  grid-area: transacoes;
+}
+
+.contas {
+  grid-area: contas;
 }

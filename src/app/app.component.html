@@ -1,12 +1,13 @@
 <div class="app">
   <app-barra-lateral class="barra-lateral" />
+
   <main class="conteudo-principal">
     <app-apresentacao />
 
     <div class="area-financeira">
-      <app-saldo class="saldo" />
+      <app-saldo class="saldo" [saldo]="saldo()" />
       <app-transacoes class="transacoes" />
-      <app-contas class="contas" />
+      <app-contas class="contas" [contas]="contas()" />
     </div>
   </main>
 </div>

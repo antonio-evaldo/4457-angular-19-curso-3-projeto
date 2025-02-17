@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { BotaoComponent } from "../botao/botao.component";
 import { ContaComponent } from "./conta/conta.component";
 import { Conta } from '../../modelos/conta';
@@ -10,18 +10,5 @@ import { Conta } from '../../modelos/conta';
   styleUrl: './contas.component.css'
 })
 export class ContasComponent {
-  contas = signal<Conta[]>([
-    {
-      banco: 'Anybank',
-      saldo: 1200
-    },
-    {
-      banco: 'Bytebank',
-      saldo: 800
-    },
-    {
-      banco: 'Switch Bank',
-      saldo: 1800
-    },
-  ]);
+  contas = input.required<Conta[]>();
 }

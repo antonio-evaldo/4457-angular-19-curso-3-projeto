@@ -1,6 +1,9 @@
+import { nanoid } from "nanoid";
+
 export class Transacao {
+  public readonly id = nanoid();
+
   constructor(
-    public readonly id: string,
     public readonly nome: string,
     public readonly tipo: TipoTransacao,
     public readonly valor: number,

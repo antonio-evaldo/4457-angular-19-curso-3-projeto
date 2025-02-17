@@ -4,7 +4,7 @@
   <div class="corpo-card">
     <ul class="transacoes">
       @for (transacao of transacoes(); track transacao.id) {
-        <li>
+        <li class="transacao">
           <app-transacao [transacao]="transacao" />
         </li>
       } @empty {
@@ -14,6 +14,6 @@
       }
     </ul>
 
-    <button class="botao-adicionar-transacao">Adicionar transação</button>
+    <app-botao class="botao-adicionar-transacao" texto="Adicionar transação" />
   </div>
 </section>

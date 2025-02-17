@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { TransacaoComponent } from "./transacao/transacao.component";
 import { TipoTransacao, Transacao } from '../../modelos/transacao';
+import { BotaoComponent } from "../botao/botao.component";
 
 @Component({
   selector: 'app-transacoes',
-  imports: [TransacaoComponent],
+  imports: [TransacaoComponent, BotaoComponent],
   templateUrl: './transacoes.component.html',
   styleUrl: './transacoes.component.css'
 })

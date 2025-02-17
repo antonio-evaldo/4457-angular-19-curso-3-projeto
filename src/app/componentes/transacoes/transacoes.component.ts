@@ -16,7 +16,6 @@ export class TransacoesComponent {
       tipo: TipoTransacao.DEPOSITO,
       valor: 500,
       data: new Date('2024-10-03T00:00'),
-      categoria: 'Alimentação',
       conta: 'Anybank'
     },
     {
@@ -25,7 +24,6 @@ export class TransacoesComponent {
       tipo: TipoTransacao.SAQUE,
       valor: 80,
       data: new Date('2024-10-01T00:00'),
-      categoria: 'Papelaria',
       conta: 'Bytebank'
     },
     {
@@ -34,7 +32,6 @@ export class TransacoesComponent {
       tipo: TipoTransacao.DEPOSITO,
       valor: 1000,
       data: new Date('2024-10-01T00:00'),
-      categoria: 'Trabalho',
       conta: 'Bytebank'
     }
   ]);

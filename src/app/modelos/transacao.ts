@@ -5,7 +5,6 @@ export class Transacao {
     public readonly tipo: TipoTransacao,
     public readonly valor: number,
     public readonly data: Date,
-    public readonly categoria: string,
     public readonly conta: string
   ) {}
 }

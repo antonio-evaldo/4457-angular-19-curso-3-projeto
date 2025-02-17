@@ -16,6 +16,14 @@ import { TipoTransacao, Transacao } from './modelos/transacao';
 export class AppComponent implements OnInit {
   transacoes = signal<Transacao[]>([
     {
+      id: '5',
+      nome: 'Saque no Anybank',
+      tipo: TipoTransacao.SAQUE,
+      valor: 200,
+      data: new Date('2024-10-01T00:00'),
+      conta: 'Anybank'
+    },
+    {
       id: '4',
       nome: 'Depósito no Switch Bank',
       tipo: TipoTransacao.DEPOSITO,

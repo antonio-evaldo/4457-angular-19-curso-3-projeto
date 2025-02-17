@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { TransacaoComponent } from "./transacao/transacao.component";
-import { Transacao } from '../../modelos/transacao';
+import { TipoTransacao, Transacao } from '../../modelos/transacao';
 
 @Component({
   selector: 'app-transacoes',
@@ -13,6 +13,7 @@ export class TransacoesComponent {
     {
       id: '3',
       nome: 'iFood',
+      tipo: TipoTransacao.DEPOSITO,
       valor: 500,
       data: new Date('2024-10-03T00:00'),
       categoria: 'Alimentação',
@@ -21,7 +22,8 @@ export class TransacoesComponent {
     {
       id: '2',
       nome: 'Papelaria Mila',
-      valor: -80,
+      tipo: TipoTransacao.SAQUE,
+      valor: 80,
       data: new Date('2024-10-01T00:00'),
       categoria: 'Papelaria',
       conta: 'Bytebank'
@@ -29,6 +31,7 @@ export class TransacoesComponent {
     {
       id: '1',
       nome: 'Freela (2ª parte)',
+      tipo: TipoTransacao.DEPOSITO,
       valor: 1000,
       data: new Date('2024-10-01T00:00'),
       categoria: 'Trabalho',

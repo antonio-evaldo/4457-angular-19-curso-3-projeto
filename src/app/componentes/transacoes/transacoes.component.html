@@ -5,7 +5,7 @@
 
   <div class="corpo-card">
     <div class="transacoes-e-botao">
-      <ul class="transacoes">
+      <ul>
         @for (transacao of transacoes(); track transacao.id) {
           <li class="transacao">
             <app-transacao [transacao]="transacao" />

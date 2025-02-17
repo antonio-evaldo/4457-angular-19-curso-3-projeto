@@ -1,0 +1,8 @@
+<div class="conta">
+  <span class="banco texto-md">{{ conta().banco }}</span>
+
+  <div class="saldo">
+    <span class="saldo-texto text-md">Saldo</span>
+    <span class="valor texto-md">{{ conta().saldo | currency:"BRL" }}</span>
+  </div>
+</div>

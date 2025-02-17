@@ -1,1 +1,23 @@
-<p>contas works!</p>
+<section class="contas-card">
+  <div class="titulo-wrapper">
+    <h2 class="titulo texto-lg">Minhas contas</h2>
+  </div>
+
+  <div class="corpo-card">
+    <div class="contas-e-botao">
+      <ul>
+        @for (conta of contas(); track conta.banco) {
+          <li class="conta">
+            <app-conta [conta]="conta" />
+          </li>
+        } @empty {
+          <li aria-hidden="true">
+            Ainda não há contas criadas.
+          </li>
+        }
+      </ul>
+  
+      <app-botao class="botao-adicionar-conta" texto="Adicionar conta" />
+    </div>
+  </div>
+</section>

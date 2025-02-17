@@ -21,15 +21,6 @@
   gap: 3rem;
 }
 
-.transacao:not(:last-child)::after {
-  content: '';
-  background: var(--cabecalho-componentes);
-  display: block;
-  height: 0.0625rem;
-  width: 100%;
-  margin: 1rem 0;
-}
-
 .botao-adicionar-transacao {
   margin: 0 auto;
 }

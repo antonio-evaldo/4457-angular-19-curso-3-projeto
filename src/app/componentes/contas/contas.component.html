@@ -7,7 +7,7 @@
     <div class="contas-e-botao">
       <ul>
         @for (conta of contas(); track conta.banco) {
-          <li class="conta">
+          <li class="item-entre-divisorias">
             <app-conta [conta]="conta" />
           </li>
         } @empty {

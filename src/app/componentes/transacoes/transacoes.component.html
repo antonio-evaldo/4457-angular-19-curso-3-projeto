@@ -7,7 +7,7 @@
     <div class="transacoes-e-botao">
       <ul>
         @for (transacao of transacoes(); track transacao.id) {
-          <li class="transacao">
+          <li class="item-entre-divisorias">
             <app-transacao [transacao]="transacao" />
           </li>
         } @empty {

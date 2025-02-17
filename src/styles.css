@@ -23,3 +23,12 @@ body {
   background: var(--fundo-geral);
   color: var(--texto);
 }
+
+.item-entre-divisorias:not(:last-child)::after {
+  content: '';
+  background: var(--cabecalho-componentes);
+  display: block;
+  height: 0.0625rem;
+  width: 100%;
+  margin: 1rem 0;
+}

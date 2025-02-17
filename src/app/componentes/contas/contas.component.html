@@ -6,7 +6,7 @@
   <div class="corpo-card">
     <div class="contas-e-botao">
       <ul>
-        @for (conta of contas(); track conta.banco) {
+        @for (conta of contas(); track conta.nome) {
           <li class="item-entre-divisorias">
             <app-conta [conta]="conta" />
           </li>

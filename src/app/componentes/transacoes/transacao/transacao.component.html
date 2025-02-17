@@ -1,8 +1,8 @@
 <div class="transacao">
   <div class="nome-e-valor">
-    <span class="nome">iFood</span>
-    <span class="valor">{{ -20 | currency:"BRL" }}</span>
+    <span class="nome">{{ transacao().nome }}</span>
+    <span class="valor">{{ transacao().valor | currency:"BRL" }}</span>
   </div>
 
-  <span class="data">01/10/2024</span>
+  <span class="data">{{ transacao().data | date:"shortDate" }}</span>
 </div>

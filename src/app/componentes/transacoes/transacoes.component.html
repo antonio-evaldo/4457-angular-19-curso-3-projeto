@@ -3,15 +3,15 @@
 
   <div class="corpo-card">
     <ul class="transacoes">
-      <li>
-        <app-transacao />
-      </li>
-      <li>
-        <app-transacao />
-      </li>
-      <li>
-        <app-transacao />
-      </li>
+      @for (transacao of transacoes(); track transacao.id) {
+        <li>
+          <app-transacao [transacao]="transacao" />
+        </li>
+      } @empty {
+        <li aria-hidden="true">
+          Ainda não há transações.
+        </li>
+      }
     </ul>
 
     <button class="botao-adicionar-transacao">Adicionar transação</button>

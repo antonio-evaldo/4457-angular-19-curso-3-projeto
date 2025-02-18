@@ -83,34 +83,34 @@ export class AppComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    this.transacoes().forEach((transacao) => {
-      this.atualizaContaComBaseNaTransacao(transacao);
-    });
+    this.contas.update((contas) => {
+      this.contas().forEach((conta) => {
+        const novoSaldo = this.calculaNovoSaldo(conta);
+
+        conta.saldo = novoSaldo;
+      });
+
+      return contas;
+    })
   }
 
-  private atualizaContaComBaseNaTransacao(transacao: Transacao) {
-    this.contas.update((contas) => {
-      const contaRelacionada = contas.find((conta) => conta.nome === transacao.conta);
+  private calculaNovoSaldo(conta: Conta): number {
+    const transacoesDaConta = this.transacoes().filter((transacao) => transacao.conta === conta.nome);
 
-      if (!contaRelacionada) {
-        throw new Error('Conta não encontrada.');
-      }
-
+    const novoSaldo = transacoesDaConta.reduce((acc, transacao) => {
       switch (transacao.tipo) {
         case TipoTransacao.DEPOSITO:
-          contaRelacionada.saldo += transacao.valor;
-          break;
+          return acc + transacao.valor;
 
         case TipoTransacao.SAQUE:
-          contaRelacionada.saldo -= transacao.valor;
-          break;
+          return acc - transacao.valor;
 
         default:
           transacao.tipo satisfies never;
           throw new Error('Tipo de transação não identificado.')
       }
+    }, conta.saldo);
 
-      return contas;
-    });
+    return novoSaldo;
   }
 }

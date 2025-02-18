@@ -1,7 +1,7 @@
 import { Component, computed, signal } from '@angular/core';
-import { SaldoComponent } from "../saldo/saldo.component";
-import { TransacoesComponent } from "../transacoes/transacoes.component";
-import { ContasComponent } from "../contas/contas.component";
+import { SaldoComponent } from "./saldo/saldo.component";
+import { TransacoesComponent } from "./transacoes/transacoes.component";
+import { ContasComponent } from "./contas/contas.component";
 import { Conta } from '../../modelos/conta';
 import { Transacao, TipoTransacao } from '../../modelos/transacao';
 

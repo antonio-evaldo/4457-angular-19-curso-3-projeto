@@ -70,27 +70,19 @@ export class AreaFinanceiraComponent {
     },
   ];
 
-  contas = signal<Conta[]>(this.contasSalvas.map(conta => {
-    return { ...conta, saldo: conta.saldoInicial }
-  }));
+  contas = computed(() => {
+    const contas = this.contasSalvas.map(conta => {
+      return new Conta(conta.nome, conta.saldoInicial);
+    });
+    
+    contas.forEach((conta) => {
+      const novoSaldo = this.calculaNovoSaldo(conta);
 
-  saldo = computed(() => {
-    return this.contas().reduce((acc, conta) => {
-      return acc + conta.saldo;
-    }, 0);
+      conta.saldo = novoSaldo;
+    });
+
+    return contas;
   });
-
-  ngOnInit(): void {
-    this.contas.update((contas) => {
-      this.contas().forEach((conta) => {
-        const novoSaldo = this.calculaNovoSaldo(conta);
-
-        conta.saldo = novoSaldo;
-      });
-
-      return contas;
-    })
-  }
 
   private calculaNovoSaldo(conta: Conta): number {
     const transacoesDaConta = this.transacoes().filter((transacao) => transacao.conta === conta.nome);
@@ -111,4 +103,10 @@ export class AreaFinanceiraComponent {
 
     return novoSaldo;
   }
+
+  saldo = computed(() => {
+    return this.contas().reduce((acc, conta) => {
+      return acc + conta.saldo;
+    }, 0);
+  });
 }

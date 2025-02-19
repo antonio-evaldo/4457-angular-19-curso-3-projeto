@@ -18,7 +18,7 @@ export class AreaFinanceiraComponent {
       nome: 'Saque no Anybank',
       tipo: TipoTransacao.SAQUE,
       valor: 200,
-      data: new Date('2024-10-01T00:00'),
+      data: new Date('2024-10-03T00:00'),
       conta: 'Anybank'
     },
     {

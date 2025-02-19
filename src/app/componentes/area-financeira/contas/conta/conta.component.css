@@ -4,8 +4,15 @@
 }
 
 .banco {
-  font-weight: 700;
   flex-basis: 70%;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.banco-nome {
+  font-weight: 700;
 }
 
 .saldo {

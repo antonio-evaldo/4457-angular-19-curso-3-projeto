@@ -55,33 +55,29 @@ export class AreaFinanceiraComponent {
     },
   ]);
 
-  private contasSalvas = [
+  contasComSaldoInicial = signal<Conta[]>([
     {
       nome: 'Anybank',
-      saldoInicial: 500,
+      saldo: 500,
     },
     {
       nome: 'Bytebank',
-      saldoInicial: 100,
+      saldo: 100,
     },
     {
       nome: 'Switch Bank',
-      saldoInicial: 0,
+      saldo: 0,
     },
-  ];
+  ]);
 
   contas = computed(() => {
-    const contas = this.contasSalvas.map(conta => {
-      return new Conta(conta.nome, conta.saldoInicial);
-    });
-    
-    contas.forEach((conta) => {
+    return this.contasComSaldoInicial().map((conta) => {
       const novoSaldo = this.calculaNovoSaldo(conta);
 
       conta.saldo = novoSaldo;
-    });
 
-    return contas;
+      return conta;
+    });
   });
 
   private calculaNovoSaldo(conta: Conta): number {

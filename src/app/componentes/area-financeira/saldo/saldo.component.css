@@ -3,9 +3,6 @@
   background: var(--cabecalho-componentes);
   padding: 1rem 0.5rem;
   text-align: center;
-}
-
-.titulo {
   font-weight: 700;
 }
 

@@ -1,8 +1,8 @@
 <div class="transacao">
   <div class="nome-e-valor">
-    <span class="nome">{{ transacao().nome }}</span>
-    <span class="valor">{{ valor() | currency:"BRL" }}</span>
+    <span class="nome texto-md">{{ transacao().nome }}</span>
+    <span class="texto-md">{{ valor() | currency:"BRL" }}</span>
   </div>
 
-  <span class="data">{{ transacao().data | date:"shortDate" }}</span>
+  <span class="texto-md">{{ transacao().data | date:"shortDate" }}</span>
 </div>

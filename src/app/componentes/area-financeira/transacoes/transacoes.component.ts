@@ -2,10 +2,11 @@ import { Component, input } from '@angular/core';
 import { TransacaoComponent } from "./transacao/transacao.component";
 import { TipoTransacao, Transacao } from '../../../modelos/transacao';
 import { BotaoComponent } from "../../botao/botao.component";
+import { CardComponent } from "../card/card.component";
 
 @Component({
   selector: 'app-transacoes',
-  imports: [TransacaoComponent, BotaoComponent],
+  imports: [TransacaoComponent, BotaoComponent, CardComponent],
   templateUrl: './transacoes.component.html',
   styleUrl: './transacoes.component.css'
 })

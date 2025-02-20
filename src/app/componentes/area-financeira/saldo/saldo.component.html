@@ -1,16 +1,9 @@
-<section class="saldo-card">
-  <div class="titulo-wrapper">
-    <img src="icones/moeda.svg" alt="">
-    <h2 class="texto-lg">Saldo disponível:</h2>
-  </div>
-
-  <div class="corpo-card">
-    <span
-      class="valor texto-xxxl"
-      [appDestaqueValorNumerico]="saldo()"
-      corPositiva="var(--violeta-destaque)"
-    >
-      {{ saldo() | currency:"BRL" }}
-    </span>
-  </div>
-</section>
+<app-card>
+  <span
+    class="valor texto-xxxl"
+    [appDestaqueValorNumerico]="saldo()"
+    corPositiva="var(--violeta-destaque)"
+  >
+    {{ saldo() | currency:"BRL" }}
+  </span>
+</app-card>

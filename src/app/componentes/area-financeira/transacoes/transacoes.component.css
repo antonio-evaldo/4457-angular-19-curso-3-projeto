@@ -2,8 +2,12 @@
   border-radius: 1.5rem 1.5rem 0rem 0rem;
   background: var(--cabecalho-componentes);
   padding: 1rem 0.5rem;
-  text-align: center;
   font-weight: 700;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .corpo-card {
@@ -20,4 +24,8 @@
 
 .botao-adicionar-transacao {
   margin: 0 auto;
+}
+
+.icone-moeda {
+  width: 1rem;
 }

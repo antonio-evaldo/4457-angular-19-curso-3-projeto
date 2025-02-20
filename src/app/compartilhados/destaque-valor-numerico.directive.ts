@@ -6,12 +6,15 @@ import { Directive, effect, ElementRef, input } from '@angular/core';
 export class DestaqueValorNumericoDirective {
   appDestaqueValorNumerico = input.required<number>();
 
+  corPositiva = input("var(--destaque-receita)");
+  corNegativa = input("var(--destaque-despesa)");
+
   constructor(elemento: ElementRef) {
     effect(() => {
       if (this.appDestaqueValorNumerico() > 0) {
-        elemento.nativeElement.style.color = "var(--destaque-receita)";
+        elemento.nativeElement.style.color = this.corPositiva();
       } else if (this.appDestaqueValorNumerico() < 0) {
-        elemento.nativeElement.style.color = "var(--destaque-despesa)";
+        elemento.nativeElement.style.color = this.corNegativa();
       }
     });
   }

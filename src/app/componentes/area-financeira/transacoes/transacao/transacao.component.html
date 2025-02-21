@@ -4,5 +4,8 @@
     <span class="texto-md">{{ valor() | currency:"BRL" }}</span>
   </div>
 
-  <span class="texto-md">{{ transacao().data | date:"shortDate" }}</span>
+  <div class="data-e-conta">
+    <span class="texto-md">{{ transacao().data | date:"shortDate" }}</span>
+    <span class="texto-md">{{ transacao().conta }}</span>
+  </div>
 </div>

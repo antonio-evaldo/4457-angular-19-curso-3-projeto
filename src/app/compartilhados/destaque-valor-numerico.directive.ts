@@ -9,7 +9,7 @@ export class DestaqueValorNumericoDirective {
   corPositiva = input("var(--destaque-receita)");
   corNegativa = input("var(--destaque-despesa)");
 
-  constructor(elemento: ElementRef) {
+  constructor(elemento: ElementRef<HTMLElement>) {
     afterRender(() => {
       if (this.appDestaqueValorNumerico() > 0) {
         elemento.nativeElement.style.color = this.corPositiva();

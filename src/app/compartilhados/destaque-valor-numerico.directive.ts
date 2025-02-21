@@ -1,4 +1,4 @@
-import { Directive, effect, ElementRef, input } from '@angular/core';
+import { afterRender, Directive, ElementRef, input } from '@angular/core';
 
 @Directive({
   selector: '[appDestaqueValorNumerico]'
@@ -10,7 +10,7 @@ export class DestaqueValorNumericoDirective {
   corNegativa = input("var(--destaque-despesa)");
 
   constructor(elemento: ElementRef) {
-    effect(() => {
+    afterRender(() => {
       if (this.appDestaqueValorNumerico() > 0) {
         elemento.nativeElement.style.color = this.corPositiva();
       } else if (this.appDestaqueValorNumerico() < 0) {

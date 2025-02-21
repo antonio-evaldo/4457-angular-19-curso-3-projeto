@@ -1,8 +1,9 @@
 .titulo-wrapper {
   border-radius: 1.5rem 1.5rem 0rem 0rem;
   background: var(--cabecalho-componentes);
-  padding: 1rem 0.5rem;
+  padding: 1rem;
   font-weight: 700;
+  text-align: center;
 
   display: flex;
   justify-content: center;

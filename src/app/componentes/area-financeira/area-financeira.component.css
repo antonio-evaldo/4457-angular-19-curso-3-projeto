@@ -18,3 +18,13 @@
 .contas {
   grid-area: contas;
 }
+
+@media screen and (max-width: 50rem) {
+  .area-financeira {
+    grid-template-areas:
+      "saldo"
+      "transacoes"
+      "contas";
+    grid-template-columns: 1fr;
+  }
+}

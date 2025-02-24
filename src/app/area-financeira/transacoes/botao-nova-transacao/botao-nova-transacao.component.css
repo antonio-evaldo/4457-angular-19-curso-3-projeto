@@ -2,16 +2,16 @@
   width: 1rem;
 }
 
-.label-grupo {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
 .form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+.label-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .input {
@@ -19,7 +19,7 @@
 
   border-radius: 0.5rem;
   border: 0;
-  background: var(--neutras-fundo-detalhe-componentes, #2A2C34);
+  background: var(--fundo-componentes);
 }
 
 .grupo-tipo-transacao {

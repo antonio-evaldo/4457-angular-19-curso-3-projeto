@@ -66,4 +66,8 @@ export class AreaFinanceiraComponent {
   processarTransacao(transacao: Transacao) {
     this.transacoes.update((transacoes) => [transacao, ...transacoes]);
   }
+
+  adicionarConta(conta: Conta) {
+    this.contasComSaldoInicial.update((contas) => [...contas, conta]);
+  }
 }

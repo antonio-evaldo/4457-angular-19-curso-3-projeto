@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { ContaComponent } from "./conta/conta.component";
 import { Conta } from '../compartilhados/conta.model';
 import { CardComponent } from "../compartilhados/card/card.component";
@@ -12,4 +12,6 @@ import { BotaoNovaContaComponent } from "./botao-nova-conta/botao-nova-conta.com
 })
 export class ContasComponent {
   contas = input.required<Conta[]>();
+
+  contaCriada = output<Conta>();
 }

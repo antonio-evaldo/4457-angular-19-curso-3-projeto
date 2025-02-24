@@ -16,13 +16,11 @@
       }
     </ul>
 
-    <app-botao (click)="abrirModal()" class="botao-adicionar-transacao">
+    <app-botao class="botao-adicionar-transacao">
       <img src="icones/moeda.svg" alt="" class="icone-moeda">
       Adicionar transação
     </app-botao>
   </div>
 </app-card>
 
-<dialog class="dialog" #modal>
-  Oii
-</dialog>
+<app-modal [estaAberto]="false"></app-modal>

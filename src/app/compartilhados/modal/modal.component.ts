@@ -9,17 +9,13 @@ import { afterRender, Component, ElementRef, input, viewChild } from '@angular/c
 export class ModalComponent {
   modal = viewChild.required<ElementRef<HTMLDialogElement>>('modal');
 
-  estaAberto = input(false);
+  aberto = input(false);
 
   constructor() {
     afterRender(() => {
-      if (this.estaAberto()) {
-        this.abrirModal();
+      if (this.aberto()) {
+        this.modal().nativeElement.showModal();
       }
     });
-  }
-
-  abrirModal() {
-    this.modal().nativeElement.showModal();
   }
 }

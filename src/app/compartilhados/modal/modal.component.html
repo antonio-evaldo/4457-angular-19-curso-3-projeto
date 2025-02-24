@@ -3,5 +3,17 @@
     <img src="icones/fechar.svg" alt="Fechar">
   </button>
 
-  Oii
+  <div class="conteudo">
+    <div class="cabecalho">
+      <ng-content select="[modal-cabecalho]">
+        Título padrão
+      </ng-content>
+    </div>
+  
+    <div>
+      <ng-content>
+        Conteúdo padrão
+      </ng-content>
+    </div>
+  </div>
 </dialog>

@@ -74,9 +74,7 @@ export class AreaFinanceiraComponent {
     return this.contasComSaldoInicial().map((conta) => {
       const novoSaldo = this.calculaNovoSaldo(conta);
 
-      conta.saldo = novoSaldo;
-
-      return conta;
+      return { ...conta, saldo: novoSaldo };
     });
   });
 

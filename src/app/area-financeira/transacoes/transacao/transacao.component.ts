@@ -1,6 +1,6 @@
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { Component, computed, input } from '@angular/core';
-import { TipoTransacao, Transacao } from '../../../modelos/transacao';
+import { TipoTransacao, Transacao } from '../../compartilhados/transacao.model';
 import { DestaqueValorNumericoDirective } from '../../../compartilhados/destaque-valor-numerico.directive';
 
 @Component({

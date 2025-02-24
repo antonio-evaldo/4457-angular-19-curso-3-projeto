@@ -1,8 +1,8 @@
 import { afterRender, Component, ElementRef, input, viewChild } from '@angular/core';
 import { TransacaoComponent } from "./transacao/transacao.component";
-import { TipoTransacao, Transacao } from '../../modelos/transacao';
+import { TipoTransacao, Transacao } from '../compartilhados/transacao.model';
 import { BotaoComponent } from "../../compartilhados/botao/botao.component";
-import { CardComponent } from "../card/card.component";
+import { CardComponent } from "../compartilhados/card/card.component";
 
 @Component({
   selector: 'app-transacoes',

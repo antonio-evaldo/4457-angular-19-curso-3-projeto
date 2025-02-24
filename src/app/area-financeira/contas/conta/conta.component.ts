@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { Conta } from '../../../modelos/conta';
+import { Conta } from '../../compartilhados/conta.model';
 import { CurrencyPipe } from '@angular/common';
 
 @Component({

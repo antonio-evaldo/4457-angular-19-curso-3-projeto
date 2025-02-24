@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { TransacaoComponent } from "./transacao/transacao.component";
 import { Transacao } from '../compartilhados/transacao.model';
 import { CardComponent } from "../compartilhados/card/card.component";
@@ -12,4 +12,6 @@ import { BotaoNovaTransacaoComponent } from "./botao-nova-transacao/botao-nova-t
 })
 export class TransacoesComponent {
   transacoes = input.required<Transacao[]>();
+
+  transacaoCriada = output<Transacao>();
 }

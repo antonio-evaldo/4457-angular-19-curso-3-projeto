@@ -24,6 +24,8 @@ export class BotaoNovaTransacaoComponent {
 
   tiposTransacao = TipoTransacao;
 
+  transacaoCriada = output<Transacao>();
+
   abrirModal() {
     this.modalAberto.set(true);
   }
@@ -37,6 +39,7 @@ export class BotaoNovaTransacaoComponent {
       this.novaTransacaoForm.conta
     );
 
-    console.log(novaTransacao);
+    this.transacaoCriada.emit(novaTransacao);
+    this.modalAberto.set(false);
   }
 }

@@ -12,48 +12,7 @@ import { Transacao, TipoTransacao } from './compartilhados/transacao.model';
   styleUrl: './area-financeira.component.css'
 })
 export class AreaFinanceiraComponent {
-  transacoes = signal<Transacao[]>([
-    {
-      id: '5',
-      nome: 'Saque no Anybank',
-      tipo: TipoTransacao.SAQUE,
-      valor: 200,
-      data: new Date('2024-10-03T00:00'),
-      conta: 'Anybank'
-    },
-    {
-      id: '4',
-      nome: 'Depósito no Switch Bank',
-      tipo: TipoTransacao.DEPOSITO,
-      valor: 500,
-      data: new Date('2024-10-03T00:00'),
-      conta: 'Switch Bank'
-    },
-    {
-      id: '3',
-      nome: 'Depósito no Bytebank',
-      tipo: TipoTransacao.DEPOSITO,
-      valor: 800,
-      data: new Date('2024-10-01T00:00'),
-      conta: 'Bytebank'
-    },
-    {
-      id: '2',
-      nome: 'Freela (2ª parte)',
-      tipo: TipoTransacao.DEPOSITO,
-      valor: 700,
-      data: new Date('2024-10-01T00:00'),
-      conta: 'Anybank'
-    },
-    {
-      id: '1',
-      nome: 'Freela (1ª parte)',
-      tipo: TipoTransacao.DEPOSITO,
-      valor: 500,
-      data: new Date('2024-10-01T00:00'),
-      conta: 'Anybank'
-    },
-  ]);
+  transacoes = signal<Transacao[]>([]);
 
   contasComSaldoInicial = signal<Conta[]>([
     {
@@ -103,4 +62,8 @@ export class AreaFinanceiraComponent {
       return acc + conta.saldo;
     }, 0);
   });
+
+  processarTransacao(transacao: Transacao) {
+    this.transacoes.update((transacoes) => [transacao, ...transacoes]);
+  }
 }

@@ -16,6 +16,10 @@
       }
     </ul>
 
-    <app-botao-nova-transacao class="botao-adicionar-transacao" (transacaoCriada)="transacaoCriada.emit($event)" />
+    <app-botao-nova-transacao
+      class="botao-adicionar-transacao"
+      (transacaoCriada)="transacaoCriada.emit($event)"
+      [contas]="contas()"
+    />
   </div>
 </app-card>

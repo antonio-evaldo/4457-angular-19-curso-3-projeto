@@ -1,4 +1,4 @@
-import { afterRender, Component, ElementRef, input, viewChild } from '@angular/core';
+import { afterRender, Component, effect, ElementRef, input, model, viewChild } from '@angular/core';
 
 @Component({
   selector: 'app-modal',
@@ -9,13 +9,19 @@ import { afterRender, Component, ElementRef, input, viewChild } from '@angular/c
 export class ModalComponent {
   modal = viewChild.required<ElementRef<HTMLDialogElement>>('modal');
 
-  aberto = input(false);
+  aberto = model(false);
 
   constructor() {
     afterRender(() => {
       if (this.aberto()) {
         this.modal().nativeElement.showModal();
+      } else {
+        this.modal().nativeElement.close();
       }
     });
+  }
+
+  fecharModal() {
+    this.aberto.set(false);
   }
 }

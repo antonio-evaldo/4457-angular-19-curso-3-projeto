@@ -1,3 +1,7 @@
-<dialog class="dialog" #modal>
+<dialog class="dialog" (close)="fecharModal()" #modal>
+  <button class="fechar-modal" (click)="fecharModal()">
+    <img src="icones/fechar.svg" alt="Fechar">
+  </button>
+
   Oii
 </dialog>

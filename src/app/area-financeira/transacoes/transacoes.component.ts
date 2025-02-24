@@ -1,6 +1,6 @@
-import { afterRender, Component, ElementRef, input, viewChild } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 import { TransacaoComponent } from "./transacao/transacao.component";
-import { TipoTransacao, Transacao } from '../compartilhados/transacao.model';
+import { Transacao } from '../compartilhados/transacao.model';
 import { BotaoComponent } from "../../compartilhados/botao/botao.component";
 import { CardComponent } from "../compartilhados/card/card.component";
 import { ModalComponent } from "../../compartilhados/modal/modal.component";
@@ -13,4 +13,10 @@ import { ModalComponent } from "../../compartilhados/modal/modal.component";
 })
 export class TransacoesComponent {
   transacoes = input.required<Transacao[]>();
+
+  modalAberto = signal(false);
+
+  abrirModal() {
+    this.modalAberto.set(true);
+  }
 }

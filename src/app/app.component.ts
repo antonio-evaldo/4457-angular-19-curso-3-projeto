@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { BarraLateralComponent } from "./componentes/barra-lateral/barra-lateral.component";
-import { ApresentacaoComponent } from "./componentes/apresentacao/apresentacao.component";
-import { AreaFinanceiraComponent } from "./componentes/area-financeira/area-financeira.component";
+import { BarraLateralComponent } from "./barra-lateral/barra-lateral.component";
+import { ApresentacaoComponent } from "./apresentacao/apresentacao.component";
+import { AreaFinanceiraComponent } from "./area-financeira/area-financeira.component";
 
 @Component({
   selector: 'app-root',

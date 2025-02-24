@@ -1,7 +1,7 @@
 import { afterRender, Component, ElementRef, input, viewChild } from '@angular/core';
 import { TransacaoComponent } from "./transacao/transacao.component";
-import { TipoTransacao, Transacao } from '../../../modelos/transacao';
-import { BotaoComponent } from "../../../compartilhados/botao/botao.component";
+import { TipoTransacao, Transacao } from '../../modelos/transacao';
+import { BotaoComponent } from "../../compartilhados/botao/botao.component";
 import { CardComponent } from "../card/card.component";
 
 @Component({

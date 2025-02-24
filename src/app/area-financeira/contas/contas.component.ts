@@ -1,7 +1,7 @@
 import { Component, input } from '@angular/core';
-import { BotaoComponent } from "../../../compartilhados/botao/botao.component";
+import { BotaoComponent } from "../../compartilhados/botao/botao.component";
 import { ContaComponent } from "./conta/conta.component";
-import { Conta } from '../../../modelos/conta';
+import { Conta } from '../../modelos/conta';
 import { CardComponent } from "../card/card.component";
 
 @Component({

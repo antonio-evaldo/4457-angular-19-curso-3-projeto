@@ -1,7 +1,7 @@
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { Component, computed, input } from '@angular/core';
-import { TipoTransacao, Transacao } from '../../../../modelos/transacao';
-import { DestaqueValorNumericoDirective } from '../../../../compartilhados/destaque-valor-numerico.directive';
+import { TipoTransacao, Transacao } from '../../../modelos/transacao';
+import { DestaqueValorNumericoDirective } from '../../../compartilhados/destaque-valor-numerico.directive';
 
 @Component({
   selector: 'app-transacao',

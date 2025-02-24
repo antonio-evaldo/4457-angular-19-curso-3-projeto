@@ -1,4 +1,4 @@
-import { Component, input, viewChild } from '@angular/core';
+import { afterRender, Component, ElementRef, input, viewChild } from '@angular/core';
 import { TransacaoComponent } from "./transacao/transacao.component";
 import { TipoTransacao, Transacao } from '../../../modelos/transacao';
 import { BotaoComponent } from "../../botao/botao.component";
@@ -13,9 +13,15 @@ import { CardComponent } from "../card/card.component";
 export class TransacoesComponent {
   transacoes = input.required<Transacao[]>();
 
-  modal = viewChild('modal');
+  modal = viewChild.required<ElementRef<HTMLDialogElement>>('modal');
+
+  constructor() {
+    afterRender(() => {
+      this.modal().nativeElement.showModal();
+    });
+  }
 
   abrirModal() {
-    console.log(this.modal());
+    this.modal().nativeElement.showModal();
   }
 }

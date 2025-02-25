@@ -1,6 +1,6 @@
 export class Conta {
   constructor(
     public readonly nome: string,
-    public saldo: number,
+    public readonly saldo: number,
   ) {}
 }

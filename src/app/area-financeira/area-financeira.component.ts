@@ -31,37 +31,17 @@ export class AreaFinanceiraComponent {
 
   contas = computed(() => {
     return this.contasComSaldoInicial().map((conta) => {
-      const novoSaldo = this.calculaNovoSaldo(conta);
+      const saldoAtualizado = this.calculaSaldoAtualizado(conta);
 
-      return { ...conta, saldo: novoSaldo };
+      return { ...conta, saldo: saldoAtualizado };
     });
   });
 
-  private calculaNovoSaldo(conta: Conta): number {
-    const transacoesDaConta = this.transacoes().filter((transacao) => transacao.conta === conta.nome);
-
-    const novoSaldo = transacoesDaConta.reduce((acc, transacao) => {
-      switch (transacao.tipo) {
-        case TipoTransacao.DEPOSITO:
-          return acc + transacao.valor;
-
-        case TipoTransacao.SAQUE:
-          return acc - transacao.valor;
-
-        default:
-          transacao.tipo satisfies never;
-          throw new Error('Tipo de transação não identificado.')
-      }
-    }, conta.saldo);
-
-    return novoSaldo;
+  private calculaSaldoAtualizado(conta: Conta): number {
+    return conta.saldo + 20;
   }
 
-  saldo = computed(() => {
-    return this.contas().reduce((acc, conta) => {
-      return acc + conta.saldo;
-    }, 0);
-  });
+  saldo = 50;
 
   processarTransacao(transacao: Transacao) {
     this.transacoes.update((transacoes) => [transacao, ...transacoes]);

@@ -38,7 +38,23 @@ export class AreaFinanceiraComponent {
   });
 
   private calculaSaldoAtualizado(conta: Conta): number {
-    return conta.saldo + 20;
+    const transacoesDaConta = this.transacoes().filter((transacao) => transacao.conta === conta.nome);
+
+    const novoSaldo = transacoesDaConta.reduce((acc, transacao) => {
+      switch (transacao.tipo) {
+        case TipoTransacao.DEPOSITO:
+          return acc + transacao.valor;
+
+        case TipoTransacao.SAQUE:
+          return acc - transacao.valor;
+
+        default:
+          transacao.tipo satisfies never;
+          throw new Error('Tipo de transação não identificado.');
+      }
+    }, conta.saldo);
+
+    return novoSaldo;
   }
 
   saldo = 50;

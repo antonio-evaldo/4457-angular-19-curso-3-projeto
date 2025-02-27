@@ -57,7 +57,11 @@ export class AreaFinanceiraComponent {
     return novoSaldo;
   }
 
-  saldo = 50;
+  saldo = computed(() => {
+    return this.contas().reduce((acc, conta) => {
+      return acc + conta.saldo;
+    }, 0);
+  });
 
   processarTransacao(transacao: Transacao) {
     this.transacoes.update((transacoes) => [transacao, ...transacoes]);
